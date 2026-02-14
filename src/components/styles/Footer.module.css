@@ -1,0 +1,140 @@
+.footer {
+    padding: 30px 0;
+    background-color: #FFB36C;
+    width: 100%;
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+
+.footerImage {
+    width: 50px;
+    height: 34px;
+}
+
+.footerAddressDiv {
+    margin-left: 20px;
+}
+
+.footerAddressTitle {
+    color: #000000;
+    font-family: "Montserrat Alternates", sans-serif;
+    font-weight: 500;
+    font-size: 12px;
+    margin-bottom: 15px;
+}
+
+.footerAddress {
+    font-weight: 500;
+    color: #000000;
+    font-family: "Montserrat Alternates", sans-serif;
+    font-size: 8px;
+    margin: 0;
+}
+
+.contactDiv {
+    width: 100%;
+    margin-top: 25px;
+    text-align: center;
+}
+
+.contactTitle {
+    color: #000000;
+    font-family: "Montserrat Alternates", sans-serif;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.contactList {
+    display: flex;
+    justify-content: center;
+    gap: 18px;
+    margin-top: 20px;
+    padding: 0;
+    list-style: none;
+}
+
+.contactItem {
+    margin: 0;
+}
+
+.socialIcon {
+    width: 35px;
+    height: 35px;
+}
+
+.instagram {
+    width: 37px;
+    height: 37px;
+}
+
+
+@media (min-width: 768px) {
+
+    .footer {
+        padding: 35px 0;
+    }
+
+    .footerImage {
+        width: 58px;
+        height: 40px;
+    }
+
+    .footerAddressTitle {
+        font-size: 14px;
+    }
+
+    .footerAddress {
+        font-size: 10px;
+    }
+
+    .contactDiv {
+        width: auto;
+        margin-top: 0;
+        text-align: left;
+    }
+
+    .contactTitle {
+        font-size: 14px;
+        text-align: left;
+    }
+}
+
+
+@media (min-width: 1200px) {
+
+    .footer {
+        padding: 40px 0 63px;
+    }
+
+    .footerImage {
+        width: 90px;
+        height: 62px;
+    }
+
+    .footerAddressTitle {
+        font-size: 16px;
+    }
+
+    .footerAddress {
+        font-size: 12px;
+    }
+
+    .contactTitle {
+        font-size: 16px;
+    }
+
+    .socialIcon {
+        width: 40px;
+        height: 40px;
+    }
+
+    .instagram {
+        width: 44px;
+        height: 42px;
+    }
+}
