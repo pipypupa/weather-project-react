@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/static/css/main.20de60f4.css",
+    "main.js": "/static/js/main.f971a4ba.js",
+    "static/media/whatsapp.svg": "/static/media/whatsapp.65dd5480fea7f6f399c2ae110845582c.svg",
+    "static/media/hero-nature-desktop.webp": "/static/media/hero-nature-desktop.1daaf1748706bebf3755.webp",
+    "static/media/instagram.svg": "/static/media/instagram.32e2cc81b7464e0125a07c2562d3eabf.svg",
+    "static/media/facebook.svg": "/static/media/facebook.4cc87fe3158bdfa7086cdc410dc67e75.svg",
+    "static/media/hero-nature-tablet.webp": "/static/media/hero-nature-tablet.5962d619bab712af1a49.webp",
+    "static/media/hero-nature-mobile.webp": "/static/media/hero-nature-mobile.005baecd66860585c99e.webp",
+    "static/media/logo-desktop-1.webp": "/static/media/logo-desktop-1.6646df5b92a1d0a48d0b.webp",
+    "static/media/user.webp": "/static/media/user.8a8928eb1a793900afb1.webp",
+    "static/media/logo-tablet-1.webp": "/static/media/logo-tablet-1.f4713d95701d46f1c1b0.webp",
+    "index.html": "/index.html",
+    "static/media/logo-mobile-1.webp": "/static/media/logo-mobile-1.63fec702bd3f862f2669.webp",
+    "main.20de60f4.css.map": "/static/css/main.20de60f4.css.map",
+    "main.f971a4ba.js.map": "/static/js/main.f971a4ba.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.20de60f4.css",
+    "static/js/main.f971a4ba.js"
+  ]
+}
