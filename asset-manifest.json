@@ -1,23 +1,32 @@
 {
   "files": {
-    "main.css": "/weather-project-react/static/css/main.2794d2b1.css",
-    "main.js": "/weather-project-react/static/js/main.b56ce644.js",
+    "main.css": "/weather-project-react/static/css/main.1602870d.css",
+    "main.js": "/weather-project-react/static/js/main.7859aa4d.js",
     "static/media/whatsapp.svg": "/weather-project-react/static/media/whatsapp.65dd5480fea7f6f399c2ae110845582c.svg",
     "static/media/hero-nature-desktop.webp": "/weather-project-react/static/media/hero-nature-desktop.1daaf1748706bebf3755.webp",
     "static/media/instagram.svg": "/weather-project-react/static/media/instagram.32e2cc81b7464e0125a07c2562d3eabf.svg",
     "static/media/facebook.svg": "/weather-project-react/static/media/facebook.4cc87fe3158bdfa7086cdc410dc67e75.svg",
     "static/media/hero-nature-tablet.webp": "/weather-project-react/static/media/hero-nature-tablet.5962d619bab712af1a49.webp",
+    "static/media/slider-image1.webp": "/weather-project-react/static/media/slider-image1.7cee1ab329ea4d8be82f.webp",
+    "static/media/pet-image3.webp": "/weather-project-react/static/media/pet-image3.fe27f2af6c033d4c96aa.webp",
     "static/media/hero-nature-mobile.webp": "/weather-project-react/static/media/hero-nature-mobile.005baecd66860585c99e.webp",
+    "static/media/pet-image2.webp": "/weather-project-react/static/media/pet-image2.a7c9e40ffdb90e27b29d.webp",
+    "static/media/pet-image4.webp": "/weather-project-react/static/media/pet-image4.ea02885f9ad0f6c03f9f.webp",
+    "static/media/slider-image3.webp": "/weather-project-react/static/media/slider-image3.a8eb8f5d97323b2c1188.webp",
+    "static/media/slider-image2.webp": "/weather-project-react/static/media/slider-image2.1fd60dafe467bb390065.webp",
+    "static/media/slider-image4.webp": "/weather-project-react/static/media/slider-image4.075f4d02457b5faca20b.webp",
+    "static/media/pet-image1.webp": "/weather-project-react/static/media/pet-image1.e62caf2ef3e90e000d84.webp",
+    "static/media/slider-image5.webp": "/weather-project-react/static/media/slider-image5.4310062572c8a5f5f29a.webp",
     "static/media/logo-desktop-1.webp": "/weather-project-react/static/media/logo-desktop-1.6646df5b92a1d0a48d0b.webp",
     "static/media/user.webp": "/weather-project-react/static/media/user.8a8928eb1a793900afb1.webp",
     "static/media/logo-tablet-1.webp": "/weather-project-react/static/media/logo-tablet-1.f4713d95701d46f1c1b0.webp",
     "index.html": "/weather-project-react/index.html",
     "static/media/logo-mobile-1.webp": "/weather-project-react/static/media/logo-mobile-1.63fec702bd3f862f2669.webp",
-    "main.2794d2b1.css.map": "/weather-project-react/static/css/main.2794d2b1.css.map",
-    "main.b56ce644.js.map": "/weather-project-react/static/js/main.b56ce644.js.map"
+    "main.1602870d.css.map": "/weather-project-react/static/css/main.1602870d.css.map",
+    "main.7859aa4d.js.map": "/weather-project-react/static/js/main.7859aa4d.js.map"
   },
   "entrypoints": [
-    "static/css/main.2794d2b1.css",
-    "static/js/main.b56ce644.js"
+    "static/css/main.1602870d.css",
+    "static/js/main.7859aa4d.js"
   ]
 }
