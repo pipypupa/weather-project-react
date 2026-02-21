@@ -12,46 +12,45 @@ export const Header = ({ setModal }) => {
         <picture className={styles.headerImage}>
           <source media="(min-width: 1200px)" srcSet={logoDesktop} />
           <source media="(min-width: 768px)" srcSet={logoTablet} />
-          <img src={logoMobile} alt="Description of image" />
+          <img src={logoMobile} alt="Company logo" />
         </picture>
+
         <ul className={styles.headerList}>
           <li className={styles.headerItem}>
-            <a className={styles.headerLink} href="">
+            <a className={styles.headerLink} href="#about">
               Who we are
             </a>
           </li>
           <li className={styles.headerItem}>
-            <a className={styles.headerLink} href="">
+            <a className={styles.headerLink} href="#contacts">
               Contacts
             </a>
           </li>
           <li className={styles.headerItem}>
-            <a className={styles.headerLink} href="">
+            <a className={styles.headerLink} href="#menu">
               Menu
             </a>
           </li>
         </ul>
+
         <div className={styles.headerDiv}>
           <button
-            onClick={() => {
-              setModal(true);
-            }}
+            onClick={() => setModal(true)}
             type="button"
             className={styles.headerButton}
           >
             Sign Up
           </button>
-          <img className={styles.headerAvatar} src={user} alt="user's avatar" />
+          <img className={styles.headerAvatar} src={user} alt="User avatar" />
         </div>
+
         <div className={styles.headerMenu}>
           <button
-            onClick={() => {
-              setModal(true);
-            }}
+            onClick={() => setModal(true)}
             type="button"
             className={styles.headerMenuButton}
           >
-            <a className={styles.headerMenuLink}>Menu</a>
+            <span className={styles.headerMenuLink}>Menu</span>
             <MdOutlineKeyboardArrowRight className={styles.headerMenuIcon} />
           </button>
         </div>
