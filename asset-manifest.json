@@ -1,14 +1,26 @@
 {
   "files": {
-    "main.css": "/weather-project-react/static/css/main.1602870d.css",
-    "main.js": "/weather-project-react/static/js/main.7859aa4d.js",
+    "main.css": "/weather-project-react/static/css/main.d42630b0.css",
+    "main.js": "/weather-project-react/static/js/main.a2bb5c8f.js",
     "static/media/whatsapp.svg": "/weather-project-react/static/media/whatsapp.65dd5480fea7f6f399c2ae110845582c.svg",
     "static/media/hero-nature-desktop.webp": "/weather-project-react/static/media/hero-nature-desktop.1daaf1748706bebf3755.webp",
     "static/media/instagram.svg": "/weather-project-react/static/media/instagram.32e2cc81b7464e0125a07c2562d3eabf.svg",
+    "static/media/pressure-gauge.png": "/weather-project-react/static/media/pressure-gauge.4929fe2ea003c5478318.png",
+    "static/media/thunder.png": "/weather-project-react/static/media/thunder.07f3e84590db85c559c9.png",
+    "static/media/snow.png": "/weather-project-react/static/media/snow.9957456da0445490c376.png",
+    "static/media/eye.png": "/weather-project-react/static/media/eye.6befe447fe505871b8ac.png",
+    "static/media/humidity.png": "/weather-project-react/static/media/humidity.a9309b663a52ca9196ca.png",
     "static/media/facebook.svg": "/weather-project-react/static/media/facebook.4cc87fe3158bdfa7086cdc410dc67e75.svg",
     "static/media/hero-nature-tablet.webp": "/weather-project-react/static/media/hero-nature-tablet.5962d619bab712af1a49.webp",
+    "static/media/lightRain.png": "/weather-project-react/static/media/lightRain.cb07da57172b4678c9df.png",
     "static/media/slider-image1.webp": "/weather-project-react/static/media/slider-image1.7cee1ab329ea4d8be82f.webp",
+    "static/media/scattered-clouds.png": "/weather-project-react/static/media/scattered-clouds.b9a187440c6c127890af.png",
+    "static/media/temperature.png": "/weather-project-react/static/media/temperature.3dd626b14ad555a1b3b8.png",
+    "static/media/wind.png": "/weather-project-react/static/media/wind.9d10fc839fa6633406a4.png",
+    "static/media/mist.png": "/weather-project-react/static/media/mist.b5a4786d706e3325b8c1.png",
+    "static/media/sun.png": "/weather-project-react/static/media/sun.3c891107df9c87318dde.png",
     "static/media/pet-image3.webp": "/weather-project-react/static/media/pet-image3.fe27f2af6c033d4c96aa.webp",
+    "static/media/heavyRain.png": "/weather-project-react/static/media/heavyRain.a19c7f6db64dc7f90a56.png",
     "static/media/hero-nature-mobile.webp": "/weather-project-react/static/media/hero-nature-mobile.005baecd66860585c99e.webp",
     "static/media/pet-image2.webp": "/weather-project-react/static/media/pet-image2.a7c9e40ffdb90e27b29d.webp",
     "static/media/pet-image4.webp": "/weather-project-react/static/media/pet-image4.ea02885f9ad0f6c03f9f.webp",
@@ -22,11 +34,11 @@
     "static/media/logo-tablet-1.webp": "/weather-project-react/static/media/logo-tablet-1.f4713d95701d46f1c1b0.webp",
     "index.html": "/weather-project-react/index.html",
     "static/media/logo-mobile-1.webp": "/weather-project-react/static/media/logo-mobile-1.63fec702bd3f862f2669.webp",
-    "main.1602870d.css.map": "/weather-project-react/static/css/main.1602870d.css.map",
-    "main.7859aa4d.js.map": "/weather-project-react/static/js/main.7859aa4d.js.map"
+    "main.d42630b0.css.map": "/weather-project-react/static/css/main.d42630b0.css.map",
+    "main.a2bb5c8f.js.map": "/weather-project-react/static/js/main.a2bb5c8f.js.map"
   },
   "entrypoints": [
-    "static/css/main.1602870d.css",
-    "static/js/main.7859aa4d.js"
+    "static/css/main.d42630b0.css",
+    "static/js/main.a2bb5c8f.js"
   ]
 }
