@@ -2,7 +2,6 @@ import styles from "./styles/WeatherCards.module.css";
 import { RiDeleteBin6Line } from "react-icons/ri";
 import { IoReload } from "react-icons/io5";
 import { IoMdHeartEmpty } from "react-icons/io";
-
 import { useState, useEffect } from "react";
 
 import sun from "../../images/sun.png";
@@ -13,19 +12,18 @@ import mist from "../../images/mist.png";
 import snow from "../../images/snow.png";
 import thunder from "../../images/thunder.png";
 
+// Константа days поза компонентом
+const days = [
+  "Sunday",
+  "Monday",
+  "Tuesday",
+  "Wednesday",
+  "Thursday",
+  "Friday",
+  "Saturday",
+];
+
 export const WeatherCards = ({ location, data }) => {
-  if (!data) return null;
-
-  const days = [
-    "Sunday",
-    "Monday",
-    "Tuesday",
-    "Wednesday",
-    "Thursday",
-    "Friday",
-    "Saturday",
-  ];
-
   const [date, setDate] = useState(new Date());
   const [dayName, setDayName] = useState(days[new Date().getDay()]);
   const [image, setImage] = useState(null);
@@ -52,11 +50,17 @@ export const WeatherCards = ({ location, data }) => {
   };
 
   useEffect(() => {
+    if (!data) return; // умова всередині useEffect
     const currentDate = new Date();
     setDate(currentDate);
     setDayName(days[currentDate.getDay()]);
     setImage(getWeatherImage(data.weather[0].main));
   }, [location, data]);
+
+  // Умовний рендер у JSX
+  if (!data) {
+    return <p>Loading weather data...</p>;
+  }
 
   return (
     <div className={styles.weatherDiv}>
@@ -67,7 +71,7 @@ export const WeatherCards = ({ location, data }) => {
               <p className={styles.weatherCityName}>{data.name}</p>
               <p className={styles.weatherCountryName}>
                 {new Intl.DisplayNames(["en"], { type: "region" }).of(
-                  data.sys.country,
+                  data.sys.country
                 )}
               </p>
             </div>
@@ -90,7 +94,6 @@ export const WeatherCards = ({ location, data }) => {
                       section.offsetTop -
                       window.innerHeight / 2 +
                       section.offsetHeight / 2;
-
                     window.scrollTo({
                       top: top,
                       behavior: "smooth",
