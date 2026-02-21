@@ -1,0 +1,150 @@
+.div {
+  margin-top: 60px;
+  width: 273px;
+  height: 580px;
+  background-color: #e8e8e8;
+  border-radius: 15px;
+  padding: 18px 25px 35px 25px;
+}
+
+.list {
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: 23px;
+  row-gap: 35px;
+  margin-top: 25px;
+}
+
+.item {
+  width: 100px;
+  height: 140px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 15px;
+  background-color: #d9d9d9;
+  border-radius: 16px;
+}
+
+.title,
+.day,
+.weatherDegrees,
+.weatherName {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+  color: #000000;
+}
+
+.title {
+  padding-left: 20px;
+  font-size: 12px;
+}
+
+.day {
+  font-size: 10px;
+  margin-bottom: 15px;
+}
+
+.weatherDiv {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  margin-bottom: 15px;
+  align-items: center;
+}
+
+.weatherImage {
+  width: 30px;
+  height: 30px;
+}
+
+.weatherDegrees,
+.weatherName {
+  font-size: 10px;
+}
+
+/* ================= TABLET ================= */
+
+@media (min-width: 768px) {
+  .div {
+    width: 614px;
+    height: 370px;
+    padding: 20px 25px 35px 25px;
+  }
+
+  .list {
+    flex-direction: column;
+    gap: 17px;
+  }
+
+  .title {
+    font-size: 14px;
+  }
+
+  .item {
+    width: 564px;
+    height: 40px;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 15px;
+    border-radius: 14px;
+  }
+
+  .day {
+    font-size: 14px;
+    margin-bottom: 0;
+    width: 100px;
+  }
+
+  .weatherDiv {
+    flex-direction: row;
+    margin-bottom: 0;
+    gap: 15px;
+  }
+
+  .weatherImage {
+    width: 35px;
+    height: 35px;
+  }
+
+  .weatherDegrees,
+  .weatherName {
+    font-size: 14px;
+  }
+
+  .weatherName {
+    width: 120px;
+    display: flex;
+    justify-content: flex-end;
+  }
+}
+
+/* ================= DESKTOP ================= */
+
+@media (min-width: 1200px) {
+  .div {
+    width: 1120px;
+    height: 400px;
+    padding: 26px 66px 42px 66px;
+  }
+
+  .title {
+    font-size: 16px;
+  }
+
+  .item {
+    width: 986px;
+    height: 47px;
+    padding: 0 30px;
+  }
+
+  .weatherImage {
+    width: 45px;
+    height: 45px;
+  }
+
+  .weatherName {
+    width: 138px;
+  }
+}

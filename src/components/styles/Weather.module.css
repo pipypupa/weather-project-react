@@ -1,0 +1,139 @@
+.weather {
+  padding-top: 35px;
+  padding-bottom: 50px;
+}
+
+.loaderWrapper {
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.loader {
+  width: 50px;
+  height: 50px;
+  border: 6px solid #e0e0e0;
+  border-top: 6px solid #4fa3ff;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+.loaderText {
+  font-size: 16px;
+  color: #555;
+  font-weight: 500;
+  font-family: "Montserrat", sans-serif;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.errorWrapper {
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  text-align: center;
+}
+
+.errorIcon {
+  font-size: 30px;
+}
+
+.errorTitle {
+  font-size: 16px;
+  font-weight: 600;
+  font-family: "Montserrat", sans-serif;
+  color: #ff4d4f;
+}
+
+.errorText {
+  font-size: 10px;
+  color: #666;
+  max-width: 300px;
+  font-family: "Montserrat", sans-serif;
+}
+
+@media (min-width: 768px) {
+  .weather {
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+
+  .loaderText {
+    font-size: 18px;
+    color: #555;
+    font-weight: 500;
+    font-family: "Montserrat", sans-serif;
+  }
+
+  .loader {
+    width: 60px;
+    height: 60px;
+    border: 6px solid #e0e0e0;
+    border-top: 6px solid #4fa3ff;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+  }
+
+  .errorTitle {
+    font-size: 20px;
+    font-weight: 600;
+    font-family: "Montserrat", sans-serif;
+    color: #ff4d4f;
+  }
+
+  .errorText {
+    font-size: 14px;
+    color: #666;
+    max-width: 300px;
+    font-family: "Montserrat", sans-serif;
+  }
+
+  .errorIcon {
+    font-size: 40px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .weather {
+    padding-top: 60px;
+    padding-bottom: 40px;
+  }
+
+  .loaderText {
+    font-size: 20px;
+    color: #555;
+    font-weight: 500;
+    font-family: "Montserrat", sans-serif;
+  }
+
+  .errorIcon {
+    font-size: 50px;
+  }
+
+  .errorTitle {
+    font-size: 24px;
+    font-weight: 600;
+    font-family: "Montserrat", sans-serif;
+    color: #ff4d4f;
+  }
+
+  .errorText {
+    font-size: 16px;
+    color: #666;
+    max-width: 300px;
+    font-family: "Montserrat", sans-serif;
+  }
+}

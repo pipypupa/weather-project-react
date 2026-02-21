@@ -1,0 +1,293 @@
+.weatherDiv {
+  padding-bottom: 15px;
+}
+
+.weatherItem:nth-child(2),
+.weatherItem:nth-child(3) {
+  display: none;
+}
+
+.weatherList {
+  display: flex;
+}
+
+.weatherItem {
+  width: 293px;
+  height: 392px;
+  background-color: #e8e8e8;
+  border: none;
+  border-radius: 25px;
+  padding: 15px 15px 20px 15px;
+}
+
+.weatherCityNameDiv {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 25px;
+}
+
+.weatherCityName,
+.weatherCountryName {
+  font-family: "Montserrat", sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  color: #000000;
+}
+
+.weatherTime {
+  font-family: "Montserrat", sans-serif;
+  font-size: 20px;
+  font-weight: 500;
+  color: #000000;
+  margin-bottom: 11px;
+  text-align: center;
+}
+
+.weatherButtonDiv {
+  display: flex;
+  justify-content: center;
+  gap: 21px;
+  margin-bottom: 12px;
+}
+
+.weatherButton {
+  background-color: #ffb36c;
+  border: none;
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Montserrat", sans-serif;
+  font-size: 9px;
+  font-weight: 500;
+  color: #000000;
+  width: 95px;
+  height: 23px;
+  transition:
+    background-color 0.2s ease,
+    transform 0.15s ease,
+    box-shadow 0.15s ease;
+}
+
+.weatherButton:hover,
+.weatherButton:focus {
+  background-color: #ffa24a;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  transform: translateY(-1px);
+}
+
+.weatherButton:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+}
+
+.weatherDateDiv {
+  display: flex;
+  padding-left: 52px;
+  gap: 12px;
+  margin-bottom: 32px;
+}
+
+.weatherDate,
+.weatherDay {
+  font-family: "Montserrat", sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  color: #000000;
+}
+
+.weatherLineDiv {
+  height: 14px;
+  width: 1px;
+  background-color: #000000;
+}
+
+.cityWeatherDiv {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+  margin-bottom: 42px;
+}
+
+.weatherImage {
+  width: 83px;
+  height: 83px;
+}
+
+.weatherDegrees {
+  font-family: "Montserrat", sans-serif;
+  font-size: 24px;
+  font-weight: 500;
+  color: #000000;
+}
+
+.weatherInfoDiv {
+  display: flex;
+  justify-content: center;
+}
+
+.reloadButton,
+.likeButton,
+.deleteButton {
+  border: none;
+  background-color: transparent;
+}
+
+.reloadButton {
+  margin-right: 14px;
+}
+
+.likeButton {
+  margin-right: 32px;
+}
+
+.reloadIcon,
+.likeIcon,
+.deleteIcon {
+  width: 24px;
+  height: 24px;
+}
+
+.seeMoreButton {
+  width: 84px;
+  height: 27px;
+  margin-right: 27px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  border-radius: 8px;
+  background-color: #ffb36c;
+  font-size: 9px;
+  font-weight: 500;
+  color: #000000;
+  font-family: "Montserrat", sans-serif;
+  transition:
+    background-color 0.2s ease,
+    transform 0.15s ease,
+    box-shadow 0.15s ease;
+}
+
+.seeMoreButton:hover,
+.seeMoreButton:focus {
+  background-color: #ff9c3f;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  transform: translateY(-1px);
+}
+
+.seeMoreButton:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+}
+
+@media (min-width: 768px) {
+  .weatherDiv {
+    padding-bottom: 25px;
+  }
+
+  .weatherItem:nth-child(2) {
+    display: inline;
+  }
+
+  .weatherList {
+    gap: 90px;
+  }
+
+  .weatherItem {
+    width: 262px;
+    height: 352px;
+    padding: 12px 15px 15px 15px;
+  }
+
+  .weatherCityNameDiv {
+    margin-bottom: 11px;
+  }
+
+  .weatherImage {
+    width: 76px;
+    height: 76px;
+  }
+
+  .cityWeatherDiv {
+    margin-bottom: 36px;
+    gap: 24px;
+  }
+
+  .weatherDateDiv {
+    padding-left: 47px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .weatherItem:nth-child(3) {
+    display: inline;
+  }
+
+  .weatherList {
+    gap: 90px;
+  }
+
+  .weatherItem {
+    width: 320px;
+    height: 430px;
+    padding: 15px 20px 20px 20px;
+  }
+
+  .weatherCityName,
+  .weatherCountryName {
+    font-size: 14px;
+  }
+
+  .weatherTime {
+    font-size: 24px;
+  }
+
+  .weatherButton {
+    width: 117px;
+    height: 28px;
+    font-size: 10px;
+  }
+
+  .weatherDate,
+  .weatherDay {
+    font-size: 14px;
+  }
+
+  .weatherImage {
+    width: 120px;
+    height: 120px;
+  }
+
+  .weatherDegrees {
+    font-size: 32px;
+  }
+
+  .reloadIcon,
+  .likeIcon,
+  .deleteIcon {
+    width: 30px;
+    height: 30px;
+  }
+
+  .seeMoreButton {
+    width: 99px;
+    height: 28px;
+    font-size: 10px;
+    border-radius: 14px;
+  }
+
+  .weatherDateDiv {
+    padding-left: 68px;
+    align-items: center;
+  }
+
+  .cityWeatherDiv {
+    gap: 34px;
+    margin-bottom: 24px;
+  }
+
+  .weatherButtonDiv {
+    margin-bottom: 16px;
+  }
+}

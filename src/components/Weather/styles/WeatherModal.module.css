@@ -1,0 +1,72 @@
+.backdrop {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(4px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal {
+  width: 90%;
+  max-width: 800px;
+  max-height: 80vh;
+  background-color: #e8e8e8;
+  border-radius: 20px;
+  padding: 30px;
+  overflow-y: auto;
+}
+
+.title {
+  font-size: 18px;
+  font-weight: 600;
+  font-family: "Montserrat", sans-serif;
+  margin-bottom: 20px;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #d9d9d9;
+  padding: 10px 20px;
+  border-radius: 12px;
+}
+
+.day {
+  font-family: "Montserrat", sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.weatherDiv {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.weatherImage {
+  width: 35px;
+  height: 35px;
+}
+
+.weatherDegrees {
+  font-size: 16px;
+  font-weight: 600;
+  font-family: "Montserrat", sans-serif;
+}
+
+.weatherName {
+  font-size: 14px;
+  font-family: "Montserrat", sans-serif;
+  width: 120px;
+  text-align: right;
+}
