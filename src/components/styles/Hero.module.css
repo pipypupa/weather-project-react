@@ -1,12 +1,13 @@
 .hero {
-  padding: 50px 0 100px;
+  padding-top: 50px;
+  margin: 0 auto;
+  padding-bottom: 100px;
   background-color: black;
+  height: 345px;
   background-image: url("../../images/hero-nature-mobile.webp");
   background-position: center;
   background-repeat: no-repeat;
-  background-size: cover;
-  height: 345px;
-  width: 100%;
+  max-width: 393px;
 }
 
 .container {
@@ -18,42 +19,42 @@
 .heroTitle {
   font-family: "Montserrat", sans-serif;
   color: #ffffff;
-  font-weight: 600;
-  font-size: 14px;
   margin-bottom: 35px;
+  font-size: 14px;
+  font-weight: 600;
 }
 
-.heroContent {
+.heroDiv {
   position: relative;
   display: flex;
-  flex-direction: column;
   gap: 20px;
+  flex-direction: column;
   padding-left: 23px;
   margin-bottom: 48px;
 }
 
-.heroText,
+.heroText {
+  font-family: "Montserrat", sans-serif;
+  font-size: 10px;
+  font-weight: 500;
+  width: 136px;
+  color: #ffffff;
+}
+
 .heroDate {
   font-family: "Montserrat", sans-serif;
   font-size: 10px;
   font-weight: 500;
-  color: #ffffff;
-}
-
-.heroText {
-  width: 136px;
-}
-
-.heroDate {
   width: 69px;
+  color: #ffffff;
 }
 
 .heroLine {
   position: absolute;
   left: 0;
   width: 2px;
-  height: 80px;
   background-color: #ffffff;
+  height: 80px;
 }
 
 .heroForm {
@@ -65,20 +66,25 @@
 .heroInput {
   width: 157px;
   height: 15px;
-  border-radius: 7px 0 0 7px;
+  border-top-left-radius: 7px;
+  border-bottom-left-radius: 7px;
   background-color: #d9d9d9;
-  padding: 4px 0 4px 10px;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 10px;
+
   font-size: 6px;
-  color: #878787;
   border: none;
   outline: none;
+  color: #000000;
 }
 
 .heroButton {
   width: 14px;
   height: 15px;
-  border-radius: 0 7px 7px 0;
   border: none;
+  border-top-right-radius: 7px;
+  border-bottom-right-radius: 7px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -86,7 +92,7 @@
   cursor: pointer;
   transition:
     background-color 0.2s ease,
-    transform 0.15s ease,
+    transform 0.15 ease,
     box-shadow 0.15s ease;
 }
 
@@ -109,18 +115,24 @@
 
 @media (min-width: 768px) {
   .hero {
-    padding: 40px 0;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    height: 345px;
     background-image: url("../../images/hero-nature-tablet.webp");
+    max-width: 834px;
   }
 
   .heroTitle {
-    font-size: 20px;
+    font-family: "Montserrat", sans-serif;
     margin-bottom: 40px;
+    font-size: 20px;
+    font-weight: 600;
   }
 
-  .heroContent {
-    flex-direction: row;
+  .heroDiv {
+    display: flex;
     gap: 32px;
+    flex-direction: row;
     padding-right: 100px;
     margin-bottom: 64px;
   }
@@ -136,22 +148,33 @@
   }
 
   .heroLine {
-    position: static;
+    position: inherit;
     height: 110px;
   }
 
   .heroInput {
     width: 373px;
     height: 27px;
-    border-radius: 12px 0 0 12px;
-    padding: 7px 0 7px 19px;
+    border-top-left-radius: 12px;
+    border-bottom-left-radius: 12px;
+    background-color: #d9d9d9;
+    padding-top: 7px;
+    padding-bottom: 7px;
+    padding-left: 19px;
     font-size: 10px;
+    border: none;
   }
 
   .heroButton {
     width: 27px;
     height: 27px;
-    border-radius: 0 12px 12px 0;
+    border: none;
+    border-top-right-radius: 12px;
+    border-bottom-right-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #ffb36c;
   }
 
   .heroIcon {
@@ -162,18 +185,22 @@
 
 @media (min-width: 1200px) {
   .hero {
-    padding: 100px 0;
+    max-width: 1440px;
+    padding-top: 100px;
+    padding-bottom: 100px;
     height: 595px;
     background-image: url("../../images/hero-nature-desktop.webp");
   }
 
   .heroTitle {
-    font-size: 40px;
     margin-bottom: 80px;
+    font-size: 40px;
   }
 
-  .heroContent {
+  .heroDiv {
+    display: flex;
     gap: 48px;
+    flex-direction: row;
     padding-right: 210px;
     margin-bottom: 80px;
   }
@@ -189,6 +216,7 @@
   }
 
   .heroLine {
+    position: inherit;
     height: 144px;
   }
 
@@ -199,15 +227,26 @@
   .heroInput {
     width: 580px;
     height: 42px;
-    border-radius: 15px 0 0 15px;
-    padding: 14px 0 14px 29px;
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+    background-color: #d9d9d9;
+    padding-top: 14px;
+    padding-bottom: 14px;
+    padding-left: 29px;
     font-size: 14px;
+    border: none;
   }
 
   .heroButton {
     width: 43px;
     height: 42px;
-    border-radius: 0 15px 15px 0;
+    border: none;
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #ffb36c;
   }
 
   .heroIcon {
