@@ -13,9 +13,11 @@ function App() {
   const [location, setLocation] = useState("Kyiv");
   const [isUserLocation, setIsUserLocation] = useState(false);
 
+  const [user, setUser] = useState(localStorage.getItem("username") || "");
+
   return (
     <div className="app">
-      <Header setModal={setModal} />
+      <Header user={user} setUser={setUser} setModal={setModal} />
 
       <main className="content">
         <Hero setLocation={setLocation} setIsUserLocation={setIsUserLocation} />
@@ -28,7 +30,7 @@ function App() {
 
       <Footer />
 
-      <Modal modal={modal} setModal={setModal} />
+      <Modal modal={modal} setModal={setModal} setUser={setUser} />
     </div>
   );
 }

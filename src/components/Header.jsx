@@ -2,10 +2,17 @@ import styles from "./styles/Header.module.css";
 import logoMobile from "../images/logo-mobile-1.webp";
 import logoTablet from "../images/logo-tablet-1.webp";
 import logoDesktop from "../images/logo-desktop-1.webp";
-import user from "../images/user.webp";
+import userIcon from "../images/user.webp";
 import { MdOutlineKeyboardArrowRight } from "react-icons/md";
 
-export const Header = ({ setModal }) => {
+export const Header = ({ user, setUser, setModal }) => {
+  const handleLogout = () => {
+    localStorage.removeItem("username");
+    localStorage.removeItem("email");
+    localStorage.removeItem("password");
+    setUser("");
+  };
+
   return (
     <header className={styles.header}>
       <div className={`${styles.container} container`}>
@@ -34,14 +41,28 @@ export const Header = ({ setModal }) => {
         </ul>
 
         <div className={styles.headerDiv}>
-          <button
-            onClick={() => setModal(true)}
-            type="button"
-            className={styles.headerButton}
-          >
-            Sign Up
-          </button>
-          <img className={styles.headerAvatar} src={user} alt="User avatar" />
+          {!user ? (
+            <button
+              onClick={() => setModal(true)}
+              type="button"
+              className={styles.headerButton}
+            >
+              Sign Up
+            </button>
+          ) : (
+            <button
+              onClick={handleLogout}
+              type="button"
+              className={styles.headerButton}
+            >
+              {user} (Log out)
+            </button>
+          )}
+          <img
+            className={styles.headerAvatar}
+            src={userIcon}
+            alt="User avatar"
+          />
         </div>
 
         <div className={styles.headerMenu}>
