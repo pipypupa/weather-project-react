@@ -2,6 +2,7 @@ import styles from "./styles/Weather.module.css";
 import { WeatherCards } from "./Weather/WeatherCards";
 import { WeatherInfo } from "./Weather/WeatherInfo";
 import { WeatherForecast } from "./Weather/WeatherForecast";
+import { WeatherHoursForecast } from "./Weather/WeatherHoursForecast";
 import { useState, useEffect } from "react";
 import axios from "axios";
 
@@ -74,6 +75,7 @@ export const Weather = ({ location, isUserLocation }) => {
         {isUserLocation && (
           <>
             <WeatherInfo data={data} />
+            <WeatherHoursForecast location={location} />
             <WeatherForecast data={data} />
           </>
         )}

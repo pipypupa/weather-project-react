@@ -1,0 +1,32 @@
+.chartWrapper {
+  background: #e8e8e8;
+  padding: 20px;
+  border-radius: 20px;
+}
+
+.chartTitle {
+  font-family: var(--font-family);
+  font-weight: 600;
+  font-size: 16px;
+  color: #000;
+  text-align: left;
+  margin-left: 77px;
+  margin-bottom: 26px;
+}
+
+.temperaturePoint {
+  border-radius: 50%;
+  width: 25px;
+  height: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 12px;
+  font-weight: 600;
+  color: #fff;
+}
+
+canvas {
+  width: 1010px !important;
+  height: 420px !important;
+}
