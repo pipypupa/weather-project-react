@@ -70,24 +70,18 @@ export const WeatherHoursForecast = ({ location }) => {
 
     const temperatures = hourlyData.map((item) => item.main.temp);
 
-    const pointColors = temperatures.map((temp) => {
-      if (temp >= 25) return "#ff4d4f";
-      if (temp >= 15) return "#ffa500";
-      return "#4fa3ff";
-    });
-
     const data = {
       labels,
       datasets: [
         {
-          label: "Температура, °C",
           data: temperatures,
           borderColor: "#ffb36c",
-          backgroundColor: "rgba(79, 163, 255, 0.2)",
-          tension: 0.3,
-          pointRadius: 7,
-          pointBackgroundColor: pointColors,
-          pointHoverRadius: 12,
+          borderWidth: 3,
+          tension: 0.4,
+          fill: false,
+          pointRadius: 0, // убрали точки
+          pointHoverRadius: 0, // убрали hover-точки
+          pointHitRadius: 0, // отключили зону клика
         },
       ],
     };
@@ -97,6 +91,7 @@ export const WeatherHoursForecast = ({ location }) => {
       data,
       options: {
         responsive: true,
+        maintainAspectRatio: false,
         plugins: {
           legend: { display: false },
           tooltip: {
@@ -110,19 +105,23 @@ export const WeatherHoursForecast = ({ location }) => {
         scales: {
           y: {
             beginAtZero: false,
-            title: { display: true,  },
             grid: {
-              color: "#000", // колір горизонтальних ліній
+              color: "#ddd",
               drawTicks: false,
+            },
+            ticks: {
+              color: "#000",
             },
           },
           x: {
             position: "top",
-            title: { display: true,  },
             offset: true,
             grid: {
-              color: "#000", // колір вертикальних ліній
+              color: "#ddd",
               drawTicks: false,
+            },
+            ticks: {
+              color: "#000",
             },
           },
         },
@@ -136,7 +135,9 @@ export const WeatherHoursForecast = ({ location }) => {
   return (
     <div className={styles.chartWrapper}>
       <h3 className={styles.chartTitle}>Hourly forecast</h3>
-      <canvas ref={chartRef}></canvas>
+      <div>
+        <canvas ref={chartRef}></canvas>
+      </div>
     </div>
   );
 };
