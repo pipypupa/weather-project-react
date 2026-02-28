@@ -13,7 +13,10 @@ function App() {
   const [location, setLocation] = useState("Amsterdam");
   const [isUserLocation, setIsUserLocation] = useState(false);
 
-  const [user, setUser] = useState(localStorage.getItem("username") || "");
+  const [user, setUser] = useState(() => {
+    const saved = localStorage.getItem("user");
+    return saved ? JSON.parse(saved).username : "";
+  });
 
   return (
     <div className="app">
@@ -22,7 +25,11 @@ function App() {
       <main className="content">
         <Hero setLocation={setLocation} setIsUserLocation={setIsUserLocation} />
 
-        <Weather location={location} isUserLocation={isUserLocation} />
+        <Weather
+          location={location}
+          isUserLocation={isUserLocation}
+          currentUser={user}
+        />
 
         <News />
         <Gallery />

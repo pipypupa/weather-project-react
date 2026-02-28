@@ -6,7 +6,7 @@ import { WeatherHoursForecast } from "./Weather/WeatherHoursForecast";
 import { useState, useEffect } from "react";
 import axios from "axios";
 
-export const Weather = ({ location, isUserLocation }) => {
+export const Weather = ({ location, isUserLocation, currentUser }) => {
   const [error, setError] = useState(false);
   const [loading, setLoading] = useState(false);
   const [data, setData] = useState(null);
@@ -70,7 +70,11 @@ export const Weather = ({ location, isUserLocation }) => {
   return (
     <section className={styles.weather}>
       <div className={`${styles.container} container`}>
-        <WeatherCards location={location} data={data} />
+        <WeatherCards
+          location={location}
+          data={data}
+          currentUser={currentUser}
+        />
 
         {isUserLocation && (
           <>

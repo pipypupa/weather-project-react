@@ -1,8 +1,10 @@
 import styles from "./styles/WeatherCards.module.css";
 import { RiDeleteBin6Line } from "react-icons/ri";
 import { IoReload } from "react-icons/io5";
-import { IoMdHeartEmpty } from "react-icons/io";
+import { IoMdHeartEmpty, IoMdHeart } from "react-icons/io";
 import { useState, useEffect } from "react";
+import { toast, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 import sun from "../../images/sun.png";
 import heavyRain from "../../images/heavyRain.png";
@@ -22,10 +24,11 @@ const days = [
   "Saturday",
 ];
 
-export const WeatherCards = ({ location, data }) => {
+export const WeatherCards = ({ location, data, currentUser }) => {
   const [date, setDate] = useState(new Date());
   const [dayName, setDayName] = useState(days[new Date().getDay()]);
-  const [image, setImage] = useState(null);
+  const [cards, setCards] = useState([]);
+  const [favorites, setFavorites] = useState([]);
 
   const getWeatherImage = (weatherMain) => {
     switch (weatherMain) {
@@ -48,28 +51,93 @@ export const WeatherCards = ({ location, data }) => {
     }
   };
 
+  // Завантажуємо favorites один раз при зміні currentUser
+  useEffect(() => {
+    if (!currentUser) return;
+
+    const storedFavorites =
+      JSON.parse(localStorage.getItem(`favorites_${currentUser}`)) || [];
+    setFavorites(storedFavorites);
+
+    // Оновлюємо поле isFavorite у вже існуючих карточках
+    setCards((prevCards) =>
+      prevCards.map((c) => ({
+        ...c,
+        isFavorite: storedFavorites.includes(c.name),
+      })),
+    );
+  }, [currentUser]);
+
+  // Додаємо або оновлюємо карточку, не видаляючи старі
   useEffect(() => {
     if (!data) return;
+
     const currentDate = new Date();
     setDate(currentDate);
     setDayName(days[currentDate.getDay()]);
-    setImage(getWeatherImage(data.weather[0].main));
-  }, [location, data]);
 
-  if (!data) {
-    return <p>Loading weather data...</p>;
-  }
+    setCards((prevCards) => {
+      const cityExists = prevCards.some((c) => c.name === data.name);
+      const newCard = {
+        ...data,
+        isFavorite: favorites.includes(data.name),
+      };
+
+      if (cityExists) {
+        // Оновлюємо існуючу карточку
+        return prevCards.map((c) => (c.name === data.name ? newCard : c));
+      } else {
+        // Додаємо нову, не видаляючи старі
+        return [...prevCards, newCard];
+      }
+    });
+  }, [data, favorites]);
+
+  const toggleFavorite = (cityName) => {
+    if (!currentUser) {
+      toast.info("Please log in to add to favorites!");
+      return;
+    }
+
+    let updatedFavorites;
+    if (favorites.includes(cityName)) {
+      updatedFavorites = favorites.filter((c) => c !== cityName);
+      toast.info(`${cityName} removed from favorites`);
+    } else {
+      updatedFavorites = [...favorites, cityName];
+      toast.success(`${cityName} added to favorites`);
+    }
+
+    setFavorites(updatedFavorites);
+    localStorage.setItem(
+      `favorites_${currentUser}`,
+      JSON.stringify(updatedFavorites),
+    );
+
+    setCards((prevCards) =>
+      prevCards.map((c) =>
+        c.name === cityName ? { ...c, isFavorite: !c.isFavorite } : c,
+      ),
+    );
+  };
+
+  const deleteCard = (cityName) => {
+    setCards((prevCards) => prevCards.filter((c) => c.name !== cityName));
+    toast.info(`${cityName} card deleted`);
+  };
+
+  if (!cards || cards.length === 0) return <p>No weather cards available</p>;
 
   return (
     <div className={styles.weatherDiv}>
       <ul className={styles.weatherList}>
-        {[1, 2, 3].map((_, index) => (
+        {cards.map((card, index) => (
           <li key={index} className={styles.weatherItem}>
             <div className={styles.weatherCityNameDiv}>
-              <p className={styles.weatherCityName}>{data.name}</p>
+              <p className={styles.weatherCityName}>{card.name}</p>
               <p className={styles.weatherCountryName}>
                 {new Intl.DisplayNames(["en"], { type: "region" }).of(
-                  data.sys.country,
+                  card.sys.country,
                 )}
               </p>
             </div>
@@ -81,28 +149,6 @@ export const WeatherCards = ({ location, data }) => {
               })}
             </p>
 
-            <div className={styles.weatherButtonDiv}>
-              <button className={styles.weatherButton}>Hourly forecast</button>
-              <button
-                className={styles.weatherButton}
-                onClick={() => {
-                  const section = document.getElementById("forecast");
-                  if (section) {
-                    const top =
-                      section.offsetTop -
-                      window.innerHeight / 2 +
-                      section.offsetHeight / 2;
-                    window.scrollTo({
-                      top: top,
-                      behavior: "smooth",
-                    });
-                  }
-                }}
-              >
-                5-day forecast
-              </button>
-            </div>
-
             <div className={styles.weatherDateDiv}>
               <p className={styles.weatherDate}>{date.toLocaleDateString()}</p>
               <div className={styles.weatherLineDiv}></div>
@@ -112,11 +158,11 @@ export const WeatherCards = ({ location, data }) => {
             <div className={styles.cityWeatherDiv}>
               <img
                 className={styles.weatherImage}
-                src={image}
-                alt={data.weather[0].description}
+                src={getWeatherImage(card.weather[0].main)}
+                alt={card.weather[0].description}
               />
               <p className={styles.weatherDegrees}>
-                {Math.round(data.main.temp)}℃
+                {Math.round(card.main.temp)}℃
               </p>
             </div>
 
@@ -125,21 +171,34 @@ export const WeatherCards = ({ location, data }) => {
                 <IoReload className={styles.reloadIcon} />
               </button>
 
-              <button type="button" className={styles.likeButton}>
-                <IoMdHeartEmpty className={styles.likeIcon} />
+              <button
+                type="button"
+                className={styles.likeButton}
+                onClick={() => toggleFavorite(card.name)}
+              >
+                {card.isFavorite ? (
+                  <IoMdHeart className={styles.likeIcon} color="red" />
+                ) : (
+                  <IoMdHeartEmpty className={styles.likeIcon} />
+                )}
               </button>
 
               <button type="button" className={styles.seeMoreButton}>
                 See more
               </button>
 
-              <button type="button" className={styles.deleteButton}>
+              <button
+                type="button"
+                className={styles.deleteButton}
+                onClick={() => deleteCard(card.name)}
+              >
                 <RiDeleteBin6Line className={styles.deleteIcon} />
               </button>
             </div>
           </li>
         ))}
       </ul>
+      <ToastContainer position="top-right" autoClose={2000} hideProgressBar />
     </div>
   );
 };
