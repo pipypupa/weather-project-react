@@ -1,5 +1,3 @@
-/* ================= BASE (Mobile 360–480px) ================= */
-
 .chartWrapper {
   background: #e8e8e8;
   padding: 15px;
@@ -28,13 +26,10 @@
   color: #fff;
 }
 
-/* ВАЖНО: убираем фиксированные размеры */
 canvas {
   width: 100% !important;
   height: 180px !important;
 }
-
-/* ================= TABLET (768px+) ================= */
 
 @media (min-width: 768px) {
   .chartWrapper {
@@ -56,8 +51,6 @@ canvas {
     height: 300px !important;
   }
 }
-
-/* ================= DESKTOP (1200px+) ================= */
 
 @media (min-width: 1200px) {
   .chartWrapper {

@@ -7,12 +7,11 @@ import { useState, useEffect } from "react";
 import sun from "../../images/sun.png";
 import heavyRain from "../../images/heavyRain.png";
 import scatteredClouds from "../../images/scattered-clouds.png";
-import lightRain from "../../images/lightRain.png";
+import lightRain from "../../images/sunRain.png";
 import mist from "../../images/mist.png";
 import snow from "../../images/snow.png";
 import thunder from "../../images/thunder.png";
 
-// Константа days поза компонентом
 const days = [
   "Sunday",
   "Monday",
@@ -50,14 +49,13 @@ export const WeatherCards = ({ location, data }) => {
   };
 
   useEffect(() => {
-    if (!data) return; // умова всередині useEffect
+    if (!data) return;
     const currentDate = new Date();
     setDate(currentDate);
     setDayName(days[currentDate.getDay()]);
     setImage(getWeatherImage(data.weather[0].main));
   }, [location, data]);
 
-  // Умовний рендер у JSX
   if (!data) {
     return <p>Loading weather data...</p>;
   }
@@ -71,7 +69,7 @@ export const WeatherCards = ({ location, data }) => {
               <p className={styles.weatherCityName}>{data.name}</p>
               <p className={styles.weatherCountryName}>
                 {new Intl.DisplayNames(["en"], { type: "region" }).of(
-                  data.sys.country
+                  data.sys.country,
                 )}
               </p>
             </div>

@@ -79,9 +79,9 @@ export const WeatherHoursForecast = ({ location }) => {
           borderWidth: 3,
           tension: 0.4,
           fill: false,
-          pointRadius: 0, // убрали точки
-          pointHoverRadius: 0, // убрали hover-точки
-          pointHitRadius: 0, // отключили зону клика
+          pointRadius: 0, 
+          pointHoverRadius: 0, 
+          pointHitRadius: 0, 
         },
       ],
     };
