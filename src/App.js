@@ -10,7 +10,7 @@ import { useState } from "react";
 
 function App() {
   const [modal, setModal] = useState(false);
-  const [location, setLocation] = useState("Kyiv");
+  const [location, setLocation] = useState("Amsterdam");
   const [isUserLocation, setIsUserLocation] = useState(false);
 
   const [user, setUser] = useState(localStorage.getItem("username") || "");

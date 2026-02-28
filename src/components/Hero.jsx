@@ -1,9 +1,31 @@
 import styles from "./styles/Hero.module.css";
 import { HiOutlineMagnifyingGlass } from "react-icons/hi2";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 export const Hero = ({ setLocation, setIsUserLocation }) => {
   const [name, setName] = useState("");
+  const [currentDate, setCurrentDate] = useState("");
+
+  const formatDate = (date) => {
+    const options = {
+      weekday: "long",
+      year: "numeric",
+      month: "long",
+      day: "numeric",
+    };
+    return date.toLocaleDateString("en-US", options);
+  };
+
+  useEffect(() => {
+    const now = new Date();
+    setCurrentDate(formatDate(now));
+
+    const interval = setInterval(() => {
+      setCurrentDate(formatDate(new Date()));
+    }, 1000 * 60);
+
+    return () => clearInterval(interval);
+  }, []);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -14,6 +36,7 @@ export const Hero = ({ setLocation, setIsUserLocation }) => {
   const handleChange = (e) => {
     setName(e.target.value);
   };
+
   return (
     <section className={styles.hero}>
       <div className={`${styles.container} container`}>
@@ -24,7 +47,7 @@ export const Hero = ({ setLocation, setIsUserLocation }) => {
             the weather.
           </p>
           <div className={styles.heroLine}></div>
-          <p className={styles.heroDate}>October 2023 Friday, 13th</p>
+          <p className={styles.heroDate}>{currentDate}</p>
         </div>
         <form onSubmit={handleSubmit} className={styles.heroForm}>
           <input
