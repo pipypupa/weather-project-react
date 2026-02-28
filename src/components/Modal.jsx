@@ -15,12 +15,10 @@ export const Modal = ({ modal, setModal, setUser }) => {
     const email = form.email.value;
     const password = form.password.value;
 
-    // Зберігаємо в localStorage
     localStorage.setItem("username", username);
     localStorage.setItem("email", email);
     localStorage.setItem("password", password);
 
-    // Оновлюємо стан у App, щоб Header одразу показав ім’я
     setUser(username);
 
     setModal(false);
