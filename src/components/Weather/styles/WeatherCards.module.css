@@ -291,3 +291,29 @@
     margin-bottom: 16px;
   }
 }
+
+.reloadButton,
+.likeButton,
+.deleteButton {
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  transition:
+    transform 0.2s ease,
+    color 0.2s ease;
+}
+
+.likeButton:hover .likeIcon {
+  transform: scale(1.2);
+  color: red;
+}
+
+.deleteButton:hover .deleteIcon {
+  transform: scale(1.2);
+  color: #ff4d4d;
+}
+
+.reloadButton:hover .reloadIcon {
+  transform: rotate(20deg) scale(1.1);
+  color: #ffb36c;
+}
