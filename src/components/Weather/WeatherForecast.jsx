@@ -45,14 +45,14 @@ export const WeatherForecast = ({ data }) => {
 
   if (loading)
     return (
-      <div id="forecast" className={styles.div}>
+      <div id="daily-forecast" className={styles.div}>
         Loading...
       </div>
     );
 
   if (error)
     return (
-      <div id="forecast" className={styles.div}>
+      <div id="daily-forecast" className={styles.div}>
         {error}
       </div>
     );
@@ -60,7 +60,7 @@ export const WeatherForecast = ({ data }) => {
   if (forecast.length === 0) return null;
 
   return (
-    <div id="forecast" className={styles.div}>
+    <div id="daily-forecast" className={styles.div}>
       <h2 className={styles.title}>5-day forecast</h2>
 
       <ul className={styles.list}>

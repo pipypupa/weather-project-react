@@ -79,9 +79,9 @@ export const WeatherHoursForecast = ({ location }) => {
           borderWidth: 3,
           tension: 0.4,
           fill: false,
-          pointRadius: 0, 
-          pointHoverRadius: 0, 
-          pointHitRadius: 0, 
+          pointRadius: 0,
+          pointHoverRadius: 0,
+          pointHitRadius: 0,
         },
       ],
     };
@@ -133,7 +133,7 @@ export const WeatherHoursForecast = ({ location }) => {
   }, [hourlyData]);
 
   return (
-    <div className={styles.chartWrapper}>
+    <div id="hourly-forecast" className={styles.chartWrapper}>
       <h3 className={styles.chartTitle}>Hourly forecast</h3>
       <div>
         <canvas ref={chartRef}></canvas>

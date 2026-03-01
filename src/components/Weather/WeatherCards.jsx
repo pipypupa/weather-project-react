@@ -24,7 +24,7 @@ const days = [
   "Saturday",
 ];
 
-export const WeatherCards = ({ location, data, currentUser }) => {
+export const WeatherCards = ({ location, data, currentUser, setUserClick }) => {
   const [date, setDate] = useState(new Date());
   const [dayName, setDayName] = useState(days[new Date().getDay()]);
   const [cards, setCards] = useState([]);
@@ -51,15 +51,13 @@ export const WeatherCards = ({ location, data, currentUser }) => {
     }
   };
 
-  // Завантажуємо favorites один раз при зміні currentUser
+  // Завантаження favorites
   useEffect(() => {
     if (!currentUser) return;
-
     const storedFavorites =
       JSON.parse(localStorage.getItem(`favorites_${currentUser}`)) || [];
     setFavorites(storedFavorites);
 
-    // Оновлюємо поле isFavorite у вже існуючих карточках
     setCards((prevCards) =>
       prevCards.map((c) => ({
         ...c,
@@ -68,7 +66,7 @@ export const WeatherCards = ({ location, data, currentUser }) => {
     );
   }, [currentUser]);
 
-  // Додаємо або оновлюємо карточку, не видаляючи старі
+  // Додавання або оновлення карточки
   useEffect(() => {
     if (!data) return;
 
@@ -84,10 +82,8 @@ export const WeatherCards = ({ location, data, currentUser }) => {
       };
 
       if (cityExists) {
-        // Оновлюємо існуючу карточку
         return prevCards.map((c) => (c.name === data.name ? newCard : c));
       } else {
-        // Додаємо нову, не видаляючи старі
         return [...prevCards, newCard];
       }
     });
@@ -126,6 +122,19 @@ export const WeatherCards = ({ location, data, currentUser }) => {
     toast.info(`${cityName} card deleted`);
   };
 
+  // Скрол до секцій
+  const handleHourlyClick = (cityName) => {
+    if (setUserClick) setUserClick("hourly");
+    const section = document.getElementById("hourly-forecast");
+    if (section) section.scrollIntoView({ behavior: "smooth", block: "start" });
+  };
+
+  const handleDailyClick = (cityName) => {
+    if (setUserClick) setUserClick("daily");
+    const section = document.getElementById("daily-forecast");
+    if (section) section.scrollIntoView({ behavior: "smooth", block: "start" });
+  };
+
   if (!cards || cards.length === 0) return <p>No weather cards available</p>;
 
   return (
@@ -148,6 +157,22 @@ export const WeatherCards = ({ location, data, currentUser }) => {
                 minute: "2-digit",
               })}
             </p>
+
+            {/* Кнопки Hourly та 5-day forecast */}
+            <div className={styles.weatherButtonDiv}>
+              <button
+                onClick={() => handleHourlyClick(card.name)}
+                className={styles.weatherButton}
+              >
+                Hourly forecast
+              </button>
+              <button
+                onClick={() => handleDailyClick(card.name)}
+                className={styles.weatherButton}
+              >
+                5-day forecast
+              </button>
+            </div>
 
             <div className={styles.weatherDateDiv}>
               <p className={styles.weatherDate}>{date.toLocaleDateString()}</p>
